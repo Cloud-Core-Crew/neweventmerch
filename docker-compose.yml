@@ -1,0 +1,116 @@
+version: '3.8'
+
+services:
+  gateway:
+    build:
+      context: ./backend/gateway
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./backend/gateway/.env
+    depends_on:
+      - auth-service
+      - event-service
+      - merch-service
+      - order-service
+      - payment-service
+      - review-service
+      - storage-service
+      - mongodb
+
+  auth-service:
+    build:
+      context: ./backend/auth-service
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5001"
+    env_file:
+      - ./backend/auth-service/.env
+    depends_on:
+      - mongodb
+
+  event-service:
+    build:
+      context: ./backend/event-service
+      dockerfile: Dockerfile
+    ports:
+      - "5002:5002"
+    env_file:
+      - ./backend/event-service/.env
+    depends_on:
+      - mongodb
+
+  merch-service:
+    build:
+      context: ./backend/merch-service
+      dockerfile: Dockerfile
+    ports:
+      - "5003:5003"
+    env_file:
+      - ./backend/merch-service/.env
+    depends_on:
+      - mongodb
+
+  order-service:
+    build:
+      context: ./backend/order-service
+      dockerfile: Dockerfile
+    ports:
+      - "5004:5004"
+    env_file:
+      - ./backend/order-service/.env
+    depends_on:
+      - mongodb
+
+  payment-service:
+    build:
+      context: ./backend/payment-service
+      dockerfile: Dockerfile
+    ports:
+      - "5005:5005"
+    env_file:
+      - ./backend/payment-service/.env
+    depends_on:
+      - mongodb
+
+  review-service:
+    build:
+      context: ./backend/review-service
+      dockerfile: Dockerfile
+    ports:
+      - "5006:5006"
+    env_file:
+      - ./backend/review-service/.env
+    depends_on:
+      - mongodb
+
+  storage-service:
+    build:
+      context: ./backend/storage-service
+      dockerfile: Dockerfile
+    ports:
+      - "5007:5007"
+    env_file:
+      - ./backend/storage-service/.env
+    depends_on:
+      - mongodb
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5180:5180"
+    depends_on:
+      - gateway
+
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+volumes:
+  mongodb_data:

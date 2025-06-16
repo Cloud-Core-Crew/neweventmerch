@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: merch-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: merch-service
+  template:
+    metadata:
+      labels:
+        app: merch-service
+    spec:
+      containers:
+        - name: merch-service
+          image: merch-service:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 5003
+          envFrom:
+            - configMapRef:
+                name: merch-service-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: merch-service
+spec:
+  selector:
+    app: merch-service
+  ports:
+    - protocol: TCP
+      port: 5003
+      targetPort: 5003

@@ -1,0 +1,44 @@
+# Node modules
+node_modules/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Build output
+build/
+dist/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+logs/
+*.log
+order-service.log
+
+# Test coverage
+coverage/
+
+# Database
+*.sqlite3
+*.db
+
+# Frontend build
+frontend/build/
+frontend/dist/
+
+# Backend build
+backend/*/build/
+backend/*/dist/
+
+# Kubernetes YAML temp ignore
+k8s/*.yaml~
