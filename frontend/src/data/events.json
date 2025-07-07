@@ -1,0 +1,32 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "ICC Cricket World Cup 2027",
+      "date": "2027-10-15",
+      "description": "The biggest cricket tournament featuring 20 teams competing for the world cup trophy",
+      "image": {
+        "small": "https://i.ytimg.com/vi/liI3OISyEog/hqdefault.jpg",
+        "medium": "https://i.ytimg.com/vi/liI3OISyEog/maxresdefault.jpg",
+        "large": "https://i.ytimg.com/vi/liI3OISyEog/maxresdefault.jpg"
+      },
+      "type": "cricket",
+      "venue": "Multiple venues across India",
+      "status": "Upcoming"
+    },
+    {
+      "id": 2,
+      "title": "PSG vs Botafogo - FIFA World Cup",
+      "date": "2027-11-01",
+      "description": "Paris Saint-Germain vs Botafogo in the FIFA World Cup",
+      "image": {
+        "small": "https://image.discovery.indazn.com/ca/v2/ca/image?id=6gbn4x9ekwthyunk69ac32ywc_image-header_pUs_1747916130000&quality=70",
+        "medium": "https://image.discovery.indazn.com/ca/v2/ca/image?id=6gbn4x9ekwthyunk69ac32ywc_image-header_pUs_1747916130000&quality=70",
+        "large": "https://image.discovery.indazn.com/ca/v2/ca/image?id=6gbn4x9ekwthyunk69ac32ywc_image-header_pUs_1747916130000&quality=70"
+      },
+      "type": "football",
+      "venue": "Stadium Name",
+      "status": "Upcoming"
+    }
+  ]
+}

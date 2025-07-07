@@ -3,20 +3,33 @@ import { useNavigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { loginUser } from '../services/api';
 import { toast } from 'react-hot-toast';
+import { useAuth } from '../contexts/AuthContext';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
+    const { login } = useAuth();
 
     const handleLogin = async (e) => {
         e.preventDefault();
+        let toastId;
         try {
+            toastId = toast.loading('Logging in...');
             const response = await loginUser({ email, password });
-            localStorage.setItem('token', response.token);
-            navigate('/'); // Redirect to home after successful login
+            console.log('Login response:', response);
+            if (response.token && response.user) {
+                login(response.user, response.token); // update context
+                toast.success('Login successful!', { id: toastId });
+                setTimeout(() => navigate('/'), 300);
+            } else {
+                toast.error('No token received from server.', { id: toastId });
+                setError('No token received from server.');
+            }
         } catch (err) {
+            console.error('Login error:', err);
+            toast.error(err?.response?.data?.message || 'Invalid email or password', { id: toastId });
             setError(err?.response?.data?.message || 'Invalid email or password');
         }
     };

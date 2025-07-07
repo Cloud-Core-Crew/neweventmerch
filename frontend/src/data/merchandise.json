@@ -1,0 +1,124 @@
+{
+  "merchandise": [
+    {
+      "id": 1,
+      "name": "ICC Cricket World Cup 2027 Official Kit",
+      "description": "Official match kit worn by players during the tournament",
+      "price": 199.99,
+      "type": "kit",
+      "event_id": 1,
+      "image": {
+        "small": "https://m.media-amazon.com/images/I/81zzk1NKA7L._AC_SL1500_.jpg",
+        "medium": "https://m.media-amazon.com/images/I/81zzk1NKA7L._AC_SL1500_.jpg",
+        "large": "https://m.media-amazon.com/images/I/81zzk1NKA7L._AC_SL1500_.jpg"
+      },
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "stock": 100
+    },
+    {
+      "id": 2,
+      "name": "ICC Cricket World Cup 2027 Fan Cap",
+      "description": "Official fan cap with tournament logo",
+      "price": 29.99,
+      "type": "cap",
+      "event_id": 1,
+      "image": {
+        "small": "https://m.media-amazon.com/images/I/81zzk1NKA7L._AC_SL1500_.jpg",
+        "medium": "https://m.media-amazon.com/images/I/81zzk1NKA7L._AC_SL1500_.jpg",
+        "large": "https://m.media-amazon.com/images/I/81zzk1NKA7L._AC_SL1500_.jpg"
+      },
+      "sizes": ["One Size"],
+      "stock": 200
+    },
+    {
+      "id": 3,
+      "name": "ICC Cricket World Cup 2027 Scarf",
+      "description": "Official tournament scarf with team colors",
+      "price": 39.99,
+      "type": "scarf",
+      "event_id": 1,
+      "image": {
+        "small": "https://m.media-amazon.com/images/I/81zzk1NKA7L._AC_SL1500_.jpg",
+        "medium": "https://m.media-amazon.com/images/I/81zzk1NKA7L._AC_SL1500_.jpg",
+        "large": "https://m.media-amazon.com/images/I/81zzk1NKA7L._AC_SL1500_.jpg"
+      },
+      "sizes": ["One Size"],
+      "stock": 150
+    },
+    {
+      "id": 4,
+      "name": "ICC Cricket World Cup 2027 Water Bottle",
+      "description": "Official tournament water bottle with team logo",
+      "price": 19.99,
+      "type": "accessory",
+      "event_id": 1,
+      "image": {
+        "small": "https://m.media-amazon.com/images/I/81zzk1NKA7L._AC_SL1500_.jpg",
+        "medium": "https://m.media-amazon.com/images/I/81zzk1NKA7L._AC_SL1500_.jpg",
+        "large": "https://m.media-amazon.com/images/I/81zzk1NKA7L._AC_SL1500_.jpg"
+      },
+      "sizes": ["One Size"],
+      "stock": 250
+    },
+    {
+      "id": 5,
+      "name": "ICC Cricket World Cup 2027 T-Shirt",
+      "description": "Official tournament t-shirt with team logo",
+      "price": 49.99,
+      "type": "shirt",
+      "event_id": 1,
+      "image": {
+        "small": "https://m.media-amazon.com/images/I/81zzk1NKA7L._AC_SL1500_.jpg",
+        "medium": "https://m.media-amazon.com/images/I/81zzk1NKA7L._AC_SL1500_.jpg",
+        "large": "https://m.media-amazon.com/images/I/81zzk1NKA7L._AC_SL1500_.jpg"
+      },
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "stock": 120
+    },
+    {
+      "id": 6,
+      "name": "PSG vs Botafogo Match Day Kit",
+      "description": "Limited edition match day kit for the FIFA tournament",
+      "price": 249.99,
+      "type": "kit",
+      "event_id": 2,
+      "image": {
+        "small": "https://image.discovery.indazn.com/ca/v2/ca/image?id=6gbn4x9ekwthyunk69ac32ywc_image-header_pUs_1747916130000&quality=70",
+        "medium": "https://image.discovery.indazn.com/ca/v2/ca/image?id=6gbn4x9ekwthyunk69ac32ywc_image-header_pUs_1747916130000&quality=70",
+        "large": "https://image.discovery.indazn.com/ca/v2/ca/image?id=6gbn4x9ekwthyunk69ac32ywc_image-header_pUs_1747916130000&quality=70"
+      },
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "stock": 50
+    },
+    {
+      "id": 7,
+      "name": "PSG vs Botafogo Match Day T-Shirt",
+      "description": "Limited edition match day t-shirt featuring both teams",
+      "price": 59.99,
+      "type": "shirt",
+      "event_id": 2,
+      "image": {
+        "small": "https://image.discovery.indazn.com/ca/v2/ca/image?id=6gbn4x9ekwthyunk69ac32ywc_image-header_pUs_1747916130000&quality=70",
+        "medium": "https://image.discovery.indazn.com/ca/v2/ca/image?id=6gbn4x9ekwthyunk69ac32ywc_image-header_pUs_1747916130000&quality=70",
+        "large": "https://image.discovery.indazn.com/ca/v2/ca/image?id=6gbn4x9ekwthyunk69ac32ywc_image-header_pUs_1747916130000&quality=70"
+      },
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "stock": 75
+    },
+    {
+      "id": 8,
+      "name": "PSG vs Botafogo Match Day Flag",
+      "description": "Limited edition flag featuring both team logos",
+      "price": 29.99,
+      "type": "accessory",
+      "event_id": 2,
+      "image": {
+        "small": "https://image.discovery.indazn.com/ca/v2/ca/image?id=6gbn4x9ekwthyunk69ac32ywc_image-header_pUs_1747916130000&quality=70",
+        "medium": "https://image.discovery.indazn.com/ca/v2/ca/image?id=6gbn4x9ekwthyunk69ac32ywc_image-header_pUs_1747916130000&quality=70",
+        "large": "https://image.discovery.indazn.com/ca/v2/ca/image?id=6gbn4x9ekwthyunk69ac32ywc_image-header_pUs_1747916130000&quality=70"
+      },
+      "sizes": ["One Size"],
+      "stock": 100
+    }
+  ]
+}

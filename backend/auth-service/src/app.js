@@ -41,7 +41,7 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
     });
 
 // Routes
-app.use('/api/auth', authRoutes);
+app.use('/', authRoutes);
 
 // Health check
 app.get('/health', function(req, res) {

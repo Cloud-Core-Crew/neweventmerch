@@ -7,7 +7,6 @@ import Home from './pages/Home';
 import Events from './pages/Events';
 import Merchandise from './pages/Merchandise';
 import Cart from './pages/Cart';
-import Login from './pages/Login';
 import Register from './pages/Register';
 import Checkout from './pages/Checkout';
 import OrderConfirmation from './pages/OrderConfirmation';
@@ -80,7 +79,6 @@ function App() {
               <Route path="/checkout" element={<PrivateRoute><Checkout /></PrivateRoute>} />
               <Route path="/order-confirmation" element={<OrderConfirmation />} />
               <Route path="/order-tracking" element={<PrivateRoute><OrderTracking /></PrivateRoute>} />
-              <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/orders" element={<Orders />} />

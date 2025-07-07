@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { motion } from 'framer-motion';
 import { useDispatch } from 'react-redux';
 import { addItem } from '../store/slices/cartSlice';
+import { fetchEvents } from '../services/api';
 
 const Events = () => {
     const [events, setEvents] = useState([]);
@@ -11,31 +11,17 @@ const Events = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        // Sample data for demonstration
-        const sampleEvents = [
-            {
-                _id: '1',
-                title: 'Summer Music Fest',
-                date: '2025-07-15',
-                description: 'Join us for a night of music, food, and fun under the stars!'
-            },
-            {
-                _id: '2',
-                title: 'Tech Innovators Conference',
-                date: '2025-08-10',
-                description: 'A gathering of the brightest minds in technology and innovation.'
-            },
-            {
-                _id: '3',
-                title: 'Charity Run 5K',
-                date: '2025-09-01',
-                description: 'Run for a cause and support local charities in our annual 5K.'
-            }
-        ];
-        setTimeout(() => {
-            setEvents(sampleEvents);
-            setLoading(false);
-        }, 800);
+        setLoading(true);
+        setError(null);
+        fetchEvents()
+            .then(data => {
+                setEvents(data);
+                setLoading(false);
+            })
+            .catch(err => {
+                setError(err.message || 'Failed to fetch events');
+                setLoading(false);
+            });
     }, []);
 
     const handleAddToCart = (event) => {
@@ -48,7 +34,7 @@ const Events = () => {
     return (
         <div style={{maxWidth:'900px',margin:'2rem auto'}}>
             <h1 style={{fontSize:'2.5rem',fontWeight:900,letterSpacing:2,marginBottom:'1.5rem'}}>Events</h1>
-            <div className="carousel">
+            <div className="carousel" style={{display:'flex',flexDirection:'column',overflowY:'auto',gap:'1rem',padding:'1rem 0',scrollBehavior:'smooth'}}>
                 {events.map((event, idx) => (
                     <motion.div
                         className="carousel-item"
@@ -59,6 +45,9 @@ const Events = () => {
                         whileHover={{ scale: 1.07, boxShadow: '0 8px 32px #e5091440' }}
                         style={{ cursor: 'default', pointerEvents: 'auto', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
                     >
+                        {event.image && (
+                            <img src={event.image} alt={event.title} style={{width:'100%',maxWidth:'320px',borderRadius:'8px',marginBottom:'1rem',objectFit:'cover',background:'#111'}} />
+                        )}
                         <h2 style={{color:'#e50914'}}>{event.title}</h2>
                         <p style={{fontWeight:600}}>{event.date}</p>
                         <p>{event.description}</p>

@@ -73,9 +73,21 @@ exports.login = function(req, res) {
                 return res.status(401).json({ message: 'Invalid credentials' });
             }
 
-            const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: '1h' });
-            console.log('Login successful, generating token');
-            res.status(200).json({ token });
+            // Include more user info in the JWT payload and response
+            const token = jwt.sign(
+                { id: user.id, username: user.username, email: user.email },
+                process.env.JWT_SECRET || 'your_jwt_secret',
+                { expiresIn: '1h' }
+            );
+            console.log('Login successful, generating token:', token);
+            res.status(200).json({
+                token,
+                user: {
+                    id: user.id,
+                    username: user.username,
+                    email: user.email
+                }
+            });
         });
     });
 };;

@@ -18,6 +18,7 @@ const Register = () => {
       await registerUser({ username: form.name, email: form.email, password: form.password });
       setMessage('Registration successful!');
     } catch (err) {
+      console.error('Registration error:', err);
       setError(err?.response?.data?.message || 'Registration failed.');
     }
   };

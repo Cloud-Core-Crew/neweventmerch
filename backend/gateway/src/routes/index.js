@@ -60,4 +60,10 @@ router.use('/api/orders', (req, res) => {
     });
 });
 
+router.use('/api/events', (req, res) => {
+    eventProxy.web(req, res, (err) => {
+        if (err) proxyErrorHandler(err, req, res, 'event service');
+    });
+});
+
 module.exports = router;

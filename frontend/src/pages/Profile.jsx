@@ -8,10 +8,10 @@ const Profile = () => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-  const { user, logout } = useAuth();
+  const { user, token, logout } = useAuth();
 
   useEffect(() => {
-    if (!user) {
+    if (!token) {
       setError('Not logged in.');
       setLoading(false);
       return;
@@ -31,7 +31,7 @@ const Profile = () => {
         setError(errorMessage);
         setLoading(false);
       });
-  }, [user]);
+  }, [token]);
 
   const handleLogout = async () => {
     try {
